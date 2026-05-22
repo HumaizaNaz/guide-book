@@ -17,3 +17,7 @@ website/.swc/
 # OS
 .DS_Store
 Thumbs.db
+
+# Playwright
+.playwright-mcp/
+home-page.png
