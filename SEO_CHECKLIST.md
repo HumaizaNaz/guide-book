@@ -1,7 +1,7 @@
 # Your App — SEO Complete Checklist
 
 Live URL: https://yoursite.com  
-Custom Domain (pending): https://novaj.ai
+Custom Domain (pending): https://yoursite.com
 
 ---
 
@@ -11,7 +11,7 @@ Custom Domain (pending): https://novaj.ai
 - [x] `sitemap.xml` — auto-generated at `/sitemap.xml` via `app/sitemap.ts`
 - [x] `robots.txt` — allows all bots, points to sitemap via `app/robots.ts`
 - [x] Canonical URLs — set on every page
-- [x] `metadataBase` — set to `https://novaj.ai` in `layout.tsx`
+- [x] `metadataBase` — set to `https://yoursite.com` in `layout.tsx`
 - [x] Title tags — under 60 characters on all pages
 - [x] Meta descriptions — under 160 characters on all pages
 - [x] `robots: { index: true, follow: true }` — on all pages
@@ -52,16 +52,16 @@ Custom Domain (pending): https://novaj.ai
 
 ### Google Search Console (MOST IMPORTANT)
 - [ ] Go to https://search.google.com/search-console
-- [ ] Add property: `novaj.ai`
+- [ ] Add property: `yoursite.com`
 - [ ] Verify ownership via **DNS TXT record** in your domain registrar (GoDaddy, Namecheap, etc.)
   - Google gives you a TXT record like: `google-site-verification=xxxxx`
   - Add it to your domain's DNS settings
-- [ ] After verification → Sitemaps → Submit `https://novaj.ai/sitemap.xml`
+- [ ] After verification → Sitemaps → Submit `https://yoursite.com/sitemap.xml`
 - [ ] Check "Coverage" tab after 48 hours to see which pages Google indexed
 
 ### Custom Domain Connection (Vercel)
 - [ ] Go to Vercel Dashboard → neura-nest project → Settings → Domains
-- [ ] Add `novaj.ai` and `www.novaj.ai`
+- [ ] Add `yoursite.com` and `www.yoursite.com`
 - [ ] Vercel gives you DNS records (A record + CNAME)
 - [ ] Add those records in your domain registrar
 - [ ] Wait 24-48 hours for DNS to propagate
@@ -121,11 +121,11 @@ Custom Domain (pending): https://novaj.ai
 - [ ] Submit to Product Hunt — big boost for new SaaS products
 - [ ] Submit to BetaList, Indie Hackers, SaaS directories
 - [ ] Get listed on Crunchbase
-- [ ] Write guest posts on Pakistani tech blogs with links back to novaj.ai
+- [ ] Write guest posts on Pakistani tech blogs with links back to yoursite.com
 
 ### Social Profiles (signals to Google)
 - [ ] Create LinkedIn company page for Your App
-- [ ] Create Twitter/X account @novajai (or similar)
+- [ ] Create Twitter/X account @yourapp (or similar)
 - [ ] Link these from the website footer (currently href="#")
 - [ ] Add `sameAs` links in Organization JSON-LD schema in `layout.tsx`
 
@@ -135,20 +135,20 @@ Custom Domain (pending): https://novaj.ai
 
 ```bash
 # Check if sitemap is accessible
-curl https://novaj.ai/sitemap.xml
+curl https://yoursite.com/sitemap.xml
 
 # Check if robots.txt is correct
-curl https://novaj.ai/robots.txt
+curl https://yoursite.com/robots.txt
 
 # Check Open Graph tags on any page
-npx opengraph-fetch https://novaj.ai
+npx opengraph-fetch https://yoursite.com
 ```
 
 ---
 
 ## PRIORITY ORDER (What to do first)
 
-1. Connect `novaj.ai` domain to Vercel
+1. Connect `yoursite.com` domain to Vercel
 2. Submit to Google Search Console + sitemap
 3. Fix OG image (verify/create 1200x630 image)
 4. Add Google Analytics
