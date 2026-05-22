@@ -36,11 +36,11 @@ export function TableOfContents() {
 
   return (
     <aside className="hidden xl:block w-56 shrink-0">
-      <div className="sticky top-20">
-        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3">
+      <div className="sticky top-20 max-h-[calc(100vh-96px)] flex flex-col">
+        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3 shrink-0">
           On this page
         </p>
-        <nav>
+        <nav className="overflow-y-auto flex-1 pr-1">
           <ul className="space-y-1">
             {toc.map(item => (
               <li key={item.id} style={{ paddingLeft: `${(item.level - 2) * 12}px` }}>

@@ -25,7 +25,7 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
   }, [])
 
   return (
-    <aside className="w-64 shrink-0 flex flex-col h-[calc(100vh-56px)] overflow-y-auto border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 py-4">
+    <aside className="w-64 shrink-0 flex flex-col sticky top-14 h-[calc(100vh-56px)] overflow-y-auto border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 py-4">
       <div className="px-4 mb-4">
         <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1.5">
           <span className="font-medium">Progress</span>
