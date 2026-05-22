@@ -25,6 +25,10 @@ export const GUIDE_META: GuideMeta[] = [
   { filename: 'SEO_MASTER_GUIDE.md', slug: 'seo-master-guide', category: 'Visibility', order: 15 },
   { filename: 'SEO_CHECKLIST.md', slug: 'seo-checklist', category: 'Visibility', order: 16 },
   { filename: '15_SEO_DISCOVERY_GUIDE.md', slug: 'seo-discovery-guide', category: 'Visibility', order: 17 },
+  { filename: '16_TYPESCRIPT_GUIDE.md', slug: 'typescript-guide', category: 'Foundation', order: 18 },
+  { filename: '17_AUTH_GUIDE.md', slug: 'auth-guide', category: 'Foundation', order: 19 },
+  { filename: '18_PAYMENTS_GUIDE.md', slug: 'payments-guide', category: 'Deploy & Infra', order: 20 },
+  { filename: '19_MONITORING_GUIDE.md', slug: 'monitoring-guide', category: 'Quality & Tools', order: 21 },
 ]
 
 export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility']

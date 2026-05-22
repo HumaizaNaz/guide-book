@@ -122,6 +122,10 @@ function getShortTitle(slug: string): string {
     'seo-master-guide': 'SEO Master Guide',
     'seo-checklist': 'SEO Checklist',
     'seo-discovery-guide': 'SEO Discovery & Indexing',
+    'typescript-guide': 'TypeScript Guide',
+    'auth-guide': 'Auth Guide',
+    'payments-guide': 'Payments (Stripe)',
+    'monitoring-guide': 'Monitoring Guide',
   }
   return titles[slug] ?? slug
 }
