@@ -18,6 +18,8 @@ website/.swc/
 .DS_Store
 Thumbs.db
 
-# Playwright
+# Playwright / screenshots
 .playwright-mcp/
-home-page.png
+*.png
+
+.vercel

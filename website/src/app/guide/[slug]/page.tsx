@@ -34,10 +34,10 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <span className="text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-2 block">
             {guide.category}
           </span>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
             {guide.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
             <span className="flex items-center gap-1.5">
               <Clock size={14} />
               {guide.readTime}

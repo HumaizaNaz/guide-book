@@ -40,7 +40,7 @@
   .prose a  { @apply text-brand-600 hover:text-brand-700 underline dark:text-brand-400; }
   .prose strong { @apply font-semibold text-gray-900 dark:text-white; }
   .prose hr { @apply border-gray-200 dark:border-gray-700 my-8; }
-  .prose table { @apply w-full border-collapse mb-6; }
+  .prose table { @apply block max-w-full overflow-x-auto border-collapse mb-6; }
   .prose th { @apply bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 text-left font-semibold text-sm; }
   .prose td { @apply border border-gray-200 dark:border-gray-700 px-4 py-2 text-sm; }
   .prose blockquote { @apply border-l-4 border-brand-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4; }

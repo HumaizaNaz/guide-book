@@ -18,7 +18,7 @@ export function CodeBlock({ children, ...props }: React.ComponentProps<'pre'>) {
       <button
         onClick={copy}
         aria-label="Copy code"
-        className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-md bg-gray-700 hover:bg-gray-600 text-gray-300 z-10"
+        className="absolute top-3 right-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity p-1.5 rounded-md bg-gray-700 hover:bg-gray-600 text-gray-300 z-10"
       >
         {copied ? <Check size={13} className="text-green-400" /> : <Copy size={13} />}
       </button>

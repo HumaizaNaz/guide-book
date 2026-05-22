@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
 
         <div className="flex max-w-screen-2xl mx-auto">
-          <div className={`${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed md:static z-40 transition-transform duration-200`}>
+          <div className={`${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed top-14 left-0 h-[calc(100vh-56px)] md:static md:h-auto z-40 transition-transform duration-200`}>
             <Sidebar onNavigate={() => setSidebarOpen(false)} />
           </div>
           <main className="flex-1 min-w-0 px-4 md:px-8 py-8">

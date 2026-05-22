@@ -4,7 +4,13 @@ import matter from 'gray-matter'
 import readingTime from 'reading-time'
 import { GUIDE_META, type Category, type GuideMeta } from './categories'
 
-const GUIDES_DIR = path.join(process.cwd(), '..')
+function findGuidesDir(): string {
+  const cwd = process.cwd()
+  const testFile = GUIDE_META[0]?.filename ?? '01_WEB_APP_FUNDAMENTALS.md'
+  if (fs.existsSync(path.join(cwd, testFile))) return cwd
+  return path.join(cwd, '..')
+}
+const GUIDES_DIR = findGuidesDir()
 
 export interface Guide extends GuideMeta {
   title: string
@@ -32,7 +38,19 @@ function extractDescription(content: string): string {
   const lines = content.split('\n')
   for (const line of lines) {
     const trimmed = line.trim()
-    if (trimmed && !trimmed.startsWith('#') && !trimmed.startsWith('*') && !trimmed.startsWith('-') && !trimmed.startsWith('```')) {
+    if (
+      trimmed &&
+      !trimmed.startsWith('#') &&
+      !trimmed.startsWith('*') &&
+      !trimmed.startsWith('-') &&
+      !trimmed.startsWith('```') &&
+      !trimmed.startsWith('<!--') &&
+      !trimmed.startsWith('>') &&
+      !trimmed.startsWith('|') &&
+      !trimmed.startsWith('http') &&
+      !trimmed.match(/^[A-Z][a-z]+ URL:/) &&
+      trimmed.length > 20
+    ) {
       return trimmed.slice(0, 120) + (trimmed.length > 120 ? '...' : '')
     }
   }
