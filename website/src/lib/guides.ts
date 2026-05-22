@@ -89,3 +89,22 @@ export function getGuidesByCategory(category: Category): Guide[] {
 export function getAllSlugs(): string[] {
   return GUIDE_META.map(g => g.slug)
 }
+
+export function getRelatedGuides(slug: string): GuideMeta[] {
+  const current = GUIDE_META.find(g => g.slug === slug)
+  if (!current) return []
+
+  const sameCategory = GUIDE_META.filter(
+    g => g.category === current.category && g.slug !== slug
+  )
+
+  if (sameCategory.length >= 3) {
+    return sameCategory.slice(0, 3)
+  }
+
+  const others = GUIDE_META.filter(
+    g => g.slug !== slug && !sameCategory.includes(g)
+  ).sort((a, b) => Math.abs(a.order - current.order) - Math.abs(b.order - current.order))
+
+  return [...sameCategory, ...others].slice(0, 3)
+}

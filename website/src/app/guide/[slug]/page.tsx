@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
-import { getAllSlugs, getGuideBySlug } from '@/lib/guides'
+import { getAllSlugs, getGuideBySlug, getRelatedGuides } from '@/lib/guides'
 import { GuideContent } from '@/components/GuideContent'
 import { ProgressTracker } from '@/components/ProgressTracker'
 import { NotesPad } from '@/components/NotesPad'
+import { RelatedGuides } from '@/components/RelatedGuides'
 import { TableOfContents } from '@/components/TableOfContents'
 import { Clock, BookOpen } from 'lucide-react'
 
@@ -21,6 +22,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const { slug } = await params
   const guide = getGuideBySlug(slug)
   if (!guide) notFound()
+  const related = getRelatedGuides(slug)
 
   return (
     <div className="flex gap-12">
@@ -48,6 +50,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
         <GuideContent content={guide.content} />
         <NotesPad slug={slug} />
+        <RelatedGuides guides={related} />
       </article>
 
       <TableOfContents />
