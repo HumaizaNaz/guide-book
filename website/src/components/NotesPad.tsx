@@ -23,7 +23,7 @@ export function NotesPad({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+    <div className="notes-pad mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
           <StickyNote size={15} />

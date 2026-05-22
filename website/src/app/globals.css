@@ -47,3 +47,46 @@
   .prose pre  { @apply rounded-xl overflow-hidden my-4; }
   .prose code:not(pre code) { @apply bg-gray-100 dark:bg-gray-800 text-brand-700 dark:text-brand-400 px-1.5 py-0.5 rounded text-sm font-mono; }
 }
+
+@media print {
+  header,
+  aside,
+  nav,
+  .notes-pad,
+  .related-guides,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  article {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .prose h2 {
+    border-bottom: 1px solid #ccc !important;
+    margin-top: 24pt !important;
+  }
+
+  pre {
+    page-break-inside: avoid;
+    border: 1px solid #ddd !important;
+    background: #f5f5f5 !important;
+    color: black !important;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+}

@@ -5,6 +5,7 @@ import { ProgressTracker } from '@/components/ProgressTracker'
 import { NotesPad } from '@/components/NotesPad'
 import { RelatedGuides } from '@/components/RelatedGuides'
 import { TableOfContents } from '@/components/TableOfContents'
+import { PrintButton } from '@/components/PrintButton'
 import { Clock, BookOpen } from 'lucide-react'
 
 export async function generateStaticParams() {
@@ -45,6 +46,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
               <BookOpen size={14} />
               {guide.wordCount.toLocaleString()} words
             </span>
+            <PrintButton />
           </div>
         </div>
 
