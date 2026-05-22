@@ -93,7 +93,10 @@ function CategorySection({
                 ) : (
                   <Circle size={14} className="shrink-0 text-gray-300 dark:text-gray-600" />
                 )}
-                <span className="truncate">{getShortTitle(guide.slug)}</span>
+                <span className="truncate flex-1">{getShortTitle(guide.slug)}</span>
+                <span className="text-xs text-gray-400 dark:text-gray-500 shrink-0 ml-1">
+                  {getReadTime(guide.slug)}
+                </span>
               </Link>
             </li>
           )
@@ -128,4 +131,31 @@ function getShortTitle(slug: string): string {
     'monitoring-guide': 'Monitoring Guide',
   }
   return titles[slug] ?? slug
+}
+
+function getReadTime(slug: string): string {
+  const times: Record<string, string> = {
+    'web-app-fundamentals': '15 min',
+    'frontend-guide': '20 min',
+    'backend-guide': '20 min',
+    'git-workflow': '20 min',
+    'database-guide': '25 min',
+    'deployment-guide': '10 min',
+    'docker-guide': '25 min',
+    'server-vps-guide': '25 min',
+    'domain-hosting-guide': '20 min',
+    'cicd-devops-guide': '20 min',
+    'performance-guide': '15 min',
+    'testing-guide': '20 min',
+    'developer-toolkit': '15 min',
+    'ai-tools-guide': '20 min',
+    'seo-master-guide': '30 min',
+    'seo-checklist': '5 min',
+    'seo-discovery-guide': '25 min',
+    'typescript-guide': '20 min',
+    'auth-guide': '20 min',
+    'payments-guide': '20 min',
+    'monitoring-guide': '15 min',
+  }
+  return times[slug] ?? '15 min'
 }
