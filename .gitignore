@@ -1,0 +1,19 @@
+# Dependencies
+website/node_modules/
+website/.next/
+website/.swc/
+
+# Env files
+.env
+.env.local
+.env*.local
+
+# IDE
+.claude/
+.vscode/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
