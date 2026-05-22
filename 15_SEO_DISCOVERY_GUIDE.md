@@ -803,6 +803,330 @@ return {
 
 ---
 
+## PART 10 — PER-PAGE TRAFFIC ANALYSIS (Kon sa page kitna, kyun kam)
+
+### Tool 1: Google Analytics 4 — Page Views Per Guide
+
+**Setup (agar nahi lagaya):**
+```bash
+npm install @next/third-parties
+```
+
+```tsx
+// app/layout.tsx
+import { GoogleAnalytics } from '@next/third-parties/google'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+    </html>
+  )
+}
+```
+
+```bash
+# .env.local
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+**Har guide ka traffic dekhne ka exact path:**
+```
+analytics.google.com
+→ Reports (left sidebar)
+→ Engagement
+→ Pages and screens
+
+Yahan milega:
+- Page path: /guide/docker-guide, /guide/testing-guide etc.
+- Views: kitni baar dekha gaya
+- Users: kitne unique visitors
+- Average engagement time: average kitni der ruke
+- Bounce rate (effectively): engaged sessions %
+```
+
+**Filter specific guide ke liye:**
+```
+Pages and screens table ke upar → "Add filter" button
+→ Page path → contains → "guide"
+→ Ab sirf guide pages dikhenge
+→ Sort by "Views" → highest to lowest
+```
+
+**Export karo CSV mein (weekly report ke liye):**
+```
+Table ke top right → Share icon → Download CSV
+```
+
+---
+
+### Tool 2: Google Search Console — Kyun Kam Traffic? (SABSE IMPORTANT)
+
+GA4 batata hai **kitna** traffic hai. GSC batata hai **kyun kam** hai.
+
+**Exact path — per-page query analysis:**
+```
+search.google.com/search-console
+→ Search results (left sidebar, Performance section mein)
+→ Top right: Date range → Last 3 months
+
+Table mein 4 columns:
+- Clicks: actual visitors jo Google se aaye
+- Impressions: kitni baar Google results mein dikh
+- CTR: clicks ÷ impressions (click-through rate)
+- Position: average ranking
+
+Ab PAGES tab click karo (Queries ke baad wala tab)
+→ Apni guide ka URL click karo
+→ Ab "Queries" tab pe jao
+→ Yeh page kaunse keywords pe rank kar raha hai!
+```
+
+**CTR Analysis — Page dikha lekin click nahi kiya:**
+
+| CTR | Matlab | Fix |
+|-----|--------|-----|
+| < 1% | Title/description boring hai | Title + meta description rewrite karo |
+| 1-3% | Average | A/B test karo titles |
+| 3-5% | Acha | Minor improvements |
+| 5%+ | Excellent | Copy this style for other pages |
+
+**Position vs Traffic matrix:**
+
+| Position | Impressions | Clicks | Problem |
+|----------|-------------|--------|---------|
+| 1-3 | High | High | ✅ Theek hai |
+| 1-3 | High | Low | Title/description fix karo |
+| 4-10 | High | Low | Push to top 3 → backlinks chahiye |
+| 11-20 | Medium | Very low | Page 2 — optimize karo → page 1 tak lao |
+| 20+ | Low | None | Page too new ya keyword too competitive |
+
+**Action: "Page 2 se Page 1 pe lao" — Quick Win**
+```
+GSC → Pages tab → click guide URL
+→ Queries tab dekhte hain kaunse keywords position 8-15 pe hain
+→ Yahi keywords target karo:
+  1. Un keywords ko page ke headings mein add karo
+  2. Content mein naturally use karo 2-3 baar
+  3. Internal links update karo (anchor text mein woh keyword ho)
+  4. Doosre sites se backlink milao us keyword se
+→ 2-4 weeks mein position improve hogi
+```
+
+**Coverage Report — Indexing problems:**
+```
+GSC → Pages (Indexing section mein)
+→ "Not indexed" → reasons list dikhegi:
+
+Common reasons:
+- "Crawled - currently not indexed" → Content thin hai, improve karo
+- "Discovered - currently not indexed" → Crawl budget kam hai, internal links add karo
+- "Duplicate without canonical" → Canonical fix karo
+- "Blocked by robots.txt" → robots.ts check karo
+- "Page with redirect" → Redirect chain check karo
+```
+
+---
+
+### Tool 3: Microsoft Clarity — FREE Heatmaps + Session Recording
+
+**Clarity kya hai?**
+- Hotjar jaisi functionality — completely free, koi limit nahi
+- Heatmaps: users kahan click karte hain, kahan scroll karte hain
+- Session recordings: actual user session video dekho
+- Built by Microsoft — privacy compliant
+
+**Setup:**
+```
+1. clarity.microsoft.com → Sign up (Microsoft account se)
+2. New project → yoursite.com
+3. Tumhe milega: Clarity Project ID (e.g., "abc123xyz")
+4. Install karo:
+```
+
+```bash
+npm install @microsoft/clarity
+```
+
+```tsx
+// app/layout.tsx mein
+'use client'
+import { useEffect } from 'react'
+
+// Layout component ke andar:
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.clarity = window.clarity || function() {
+      (window.clarity.q = window.clarity.q || []).push(arguments)
+    }
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://www.clarity.ms/tag/YOUR_PROJECT_ID'
+    document.head.appendChild(script)
+  }
+}, [])
+```
+
+Ya Next.js Script component se (better performance):
+```tsx
+// app/layout.tsx
+import Script from 'next/script'
+
+// <body> ke andar add karo:
+<Script
+  id="microsoft-clarity"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "YOUR_PROJECT_ID");
+    `,
+  }}
+/>
+```
+
+**Clarity se kya sikhte hain:**
+
+```
+clarity.microsoft.com → Dashboard
+
+1. Heatmaps → select page → /guide/docker-guide
+   → Dekho users kahan click karte hain
+   → Scroll depth dekho — kitne log bottom tak jaate hain
+   → "Dead clicks" — kahan click karte hain lekin kuch nahi hota
+   → "Rage clicks" — frustrated users — kuch kaam nahi kar raha wahan
+
+2. Recordings
+   → Actual users ka session video
+   → Filter: Pages → /guide/testing-guide → jo kam traffic wala hai
+   → Dekho log page pe aa ke kya karte hain, kahan jaate hain
+   → Kab page close karte hain — content boring tha ya hard to read?
+
+3. Insights (AI-powered)
+   → Clarity automatically batata hai:
+      "Users on /guide/performance are rage clicking the TOC"
+      "High scroll on /guide/docker — users engaged"
+      "Quick exits on /guide/frontend — might need better intro"
+```
+
+---
+
+### Tool 4: Ahrefs / Semrush (Paid — Jab budget ho)
+
+Free alternatives se kaam chal sakta hai, lekin yeh tools batate hain:
+- Competitor ka traffic
+- Backlinks kitne hain
+- Keyword difficulty
+- Ranking history
+
+**Free alternatives jo kaafi hain:**
+- **Ahrefs Webmaster Tools** (free, limited) — ahrefs.com/webmaster-tools
+- **Ubersuggest** (limited free) — keyword ideas
+- **Google Keyword Planner** (free with Google Ads account) — search volumes
+
+---
+
+### Diagnosis Workflow: "Guide X ka traffic kyun kam hai?"
+
+Yeh step-by-step process follow karo jab koi guide underperforming ho:
+
+**Step 1: Check karo index hua hai ya nahi**
+```
+GSC → URL Inspection
+→ Paste: https://yoursite.com/guide/testing-guide
+→ "URL is on Google" dikhna chahiye
+→ Agar nahi: Request Indexing
+```
+
+**Step 2: Impressions check karo**
+```
+GSC → Search results → Pages tab → guide URL click karo
+→ Impressions: 0 ya bahut kam?
+  → Keyword targeting problem — page kisi query pe rank nahi kar raha
+  → Fix: better keyword research, optimize title/headings
+→ Impressions hain lekin Clicks nahi?
+  → CTR problem — title ya description boring
+  → Fix: compelling title + meta description likho
+```
+
+**Step 3: Position check karo**
+```
+GSC → wahi page → Queries tab
+→ Average position 11-20? → Page 2 pe ho — "Page 2 Quick Win" steps follow karo
+→ Average position 20+? → Either keyword too competitive ya content quality
+```
+
+**Step 4: Content quality check**
+```
+Khud honestly dekho:
+□ Kya heading mein main keyword hai?
+□ Kya content detailed hai ya sirf surface level?
+□ Kya koi actual code examples / practical steps hain?
+□ Kya competitor ka page is topic pe zyada helpful hai?
+□ Kya page fast load ho raha hai? (pagespeed.web.dev pe check karo)
+```
+
+**Step 5: Clarity mein session recording dekho**
+```
+clarity.microsoft.com → Recordings → filter by /guide/testing-guide
+→ Log kitni der ruke?
+→ Kahan scroll karke ruk gaye?
+→ Kab back button dabaya?
+→ Yeh batayega content mein exactly kahan problem hai
+```
+
+**Step 6: Internal links check karo**
+```
+Site ke doosre pages se yeh guide link ho rahi hai?
+→ GSC → Links → Internal links → specific URL dekhte hain
+→ Agar sirf sidebar se link hai:
+  → Home page pe mention karo
+  → Related guides mein add karo
+  → Relevant doosri guides ke bottom mein link add karo
+```
+
+**Quick fix priority:**
+```
+Not indexed → Fix immediately (GSC Request Indexing)
+No impressions → Keyword/title fix (1-2 weeks)
+Low CTR → Meta description rewrite (quick win)
+Position 11-20 → Internal links + content improve (2-4 weeks)
+Position 20+ → Major content rewrite ya different keyword target karo
+```
+
+---
+
+### Weekly 15-Minute Routine
+
+**Har Monday karo (15 min total):**
+
+```
+1. GA4 → Pages and screens → Sort by Views
+   → Kaunse guides top pe hain? (2 min)
+   → Kaunse bottom pe hain? → Note down karo
+
+2. GSC → Search results → Dates: Last 7 days vs Previous period
+   → Total clicks up ya down?
+   → Pages tab → kaunsi guide improve/decline hui? (5 min)
+
+3. GSC → Pages → Not indexed section
+   → Naye indexing issues toh nahi? (2 min)
+
+4. Clarity → Dashboard → AI Insights
+   → Koi rage clicks ya dead clicks? (3 min)
+
+5. Action: ek guide pick karo jo underperforming hai
+   → Ek small improvement karo (title, heading, internal link)
+   → Note karo — next week results dekhna hai (3 min)
+```
+
+---
+
 ## QUICK CHECKLIST
 
 ### Naya Site Launch (Day 1)
@@ -842,13 +1166,30 @@ return {
 
 ## TOOLS SUMMARY
 
-| Tool | Kaam | URL |
-|------|------|-----|
-| Google Search Console | Indexing, errors, search analytics | search.google.com/search-console |
-| Bing Webmaster Tools | Bing indexing, IndexNow verify | bing.com/webmasters |
-| Rich Results Test | JSON-LD structured data test | search.google.com/test/rich-results |
-| Open Graph Preview | OG tags + Twitter card test | opengraph.xyz |
-| Twitter Card Validator | Twitter preview test | cards-dev.twitter.com/validator |
-| Schema Validator | JSON-LD validate | validator.schema.org |
-| JSON-LD Playground | Schema write + test | json-ld.org/playground |
-| PageSpeed Insights | Core Web Vitals (crawl factor) | pagespeed.web.dev |
+### Traffic & Analytics
+
+| Tool | Kaam | URL | Cost |
+|------|------|-----|------|
+| Google Analytics 4 | Per-page views, traffic sources, engagement | analytics.google.com | Free |
+| Google Search Console | Per-page queries, CTR, position, indexing | search.google.com/search-console | Free |
+| Microsoft Clarity | Heatmaps, session recordings, AI insights | clarity.microsoft.com | Free |
+| Ahrefs Webmaster Tools | Backlinks, organic keywords (limited) | ahrefs.com/webmaster-tools | Free (limited) |
+| PageSpeed Insights | Core Web Vitals per page | pagespeed.web.dev | Free |
+
+### Indexing & Discovery
+
+| Tool | Kaam | URL | Cost |
+|------|------|-----|------|
+| Bing Webmaster Tools | Bing indexing, IndexNow verify | bing.com/webmasters | Free |
+| GSC URL Inspection | Manual Google index request | GSC → URL Inspection | Free |
+| IndexNow API | Instant Bing/Yandex submission | api.indexnow.org | Free |
+
+### Validation & Testing
+
+| Tool | Kaam | URL | Cost |
+|------|------|-----|------|
+| Rich Results Test | JSON-LD structured data | search.google.com/test/rich-results | Free |
+| Open Graph Preview | OG + Twitter card preview | opengraph.xyz | Free |
+| Twitter Card Validator | Twitter preview test | cards-dev.twitter.com/validator | Free |
+| Schema Validator | JSON-LD validate | validator.schema.org | Free |
+| JSON-LD Playground | Schema write + test | json-ld.org/playground | Free |
