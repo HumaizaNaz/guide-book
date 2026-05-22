@@ -24,6 +24,7 @@ export const GUIDE_META: GuideMeta[] = [
   { filename: '12_AI_TOOLS_GUIDE.md', slug: 'ai-tools-guide', category: 'Quality & Tools', order: 14 },
   { filename: 'SEO_MASTER_GUIDE.md', slug: 'seo-master-guide', category: 'Visibility', order: 15 },
   { filename: 'SEO_CHECKLIST.md', slug: 'seo-checklist', category: 'Visibility', order: 16 },
+  { filename: '15_SEO_DISCOVERY_GUIDE.md', slug: 'seo-discovery-guide', category: 'Visibility', order: 17 },
 ]
 
 export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility']

@@ -121,6 +121,7 @@ function getShortTitle(slug: string): string {
     'ai-tools-guide': 'AI Tools Guide',
     'seo-master-guide': 'SEO Master Guide',
     'seo-checklist': 'SEO Checklist',
+    'seo-discovery-guide': 'SEO Discovery & Indexing',
   }
   return titles[slug] ?? slug
 }
