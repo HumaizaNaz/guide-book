@@ -60,7 +60,7 @@ Custom Domain (pending): https://abc.com
 - [ ] Check "Coverage" tab after 48 hours to see which pages Google indexed
 
 ### Custom Domain Connection (Vercel)
-- [ ] Go to Vercel Dashboard → neura-nest project → Settings → Domains
+- [ ] Go to Vercel Dashboard → ABC project → Settings → Domains
 - [ ] Add `abc.com` and `www.abc.com`
 - [ ] Vercel gives you DNS records (A record + CNAME)
 - [ ] Add those records in your domain registrar
