@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { Search, X } from 'lucide-react'
 import { buildSearchIndex, search, type SearchResult, type SearchIndex } from '@/lib/search'
+import { GUIDE_META } from '@/lib/categories'
 
 interface SearchModalProps {
   open: boolean
@@ -110,7 +111,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
         )}
 
         {!query && (
-          <p className="px-4 py-4 text-xs text-gray-400 text-center">Type to search all 16 guides</p>
+          <p className="px-4 py-4 text-xs text-gray-400 text-center">Type to search all {GUIDE_META.length} guides</p>
         )}
       </div>
     </div>

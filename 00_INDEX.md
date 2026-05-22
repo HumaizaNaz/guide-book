@@ -1,6 +1,6 @@
 # GUIDES — Master Index
 *Ek complete web developer + founder handbook — 2026 updated*
-*14 guides — Sab kuch ek jagah*
+*21 guides — Sab kuch ek jagah*
 
 ---
 
@@ -14,6 +14,8 @@
 | 03_BACKEND_GUIDE.md | APIs, Node.js, REST patterns | 20 min |
 | 10_GIT_WORKFLOW_GUIDE.md | Git commands, branching, PRs | 20 min |
 | 11_DATABASE_GUIDE.md | PostgreSQL, Prisma, Supabase, Redis | 25 min |
+| 16_TYPESCRIPT_GUIDE.md | TypeScript essentials, types, generics | 20 min |
+| 17_AUTH_GUIDE.md | Clerk, NextAuth v5, JWT, OAuth | 20 min |
 
 ### Deployment & Infrastructure
 | File | Topic | Time |
@@ -23,6 +25,7 @@
 | 07_SERVER_VPS_GUIDE.md | VPS khareedhna, Ubuntu setup, Caddy | 25 min |
 | 08_DOMAIN_HOSTING_GUIDE.md | Domain, DNS, SSL, Cloudflare | 20 min |
 | 09_CICD_DEVOPS_GUIDE.md | GitHub Actions, auto deployment | 20 min |
+| 18_PAYMENTS_GUIDE.md | Stripe, webhooks, subscriptions | 20 min |
 
 ### Quality & Tools
 | File | Topic | Time |
@@ -31,12 +34,14 @@
 | 13_TESTING_GUIDE.md | Vitest, Playwright, unit/E2E tests | 20 min |
 | 14_DEVELOPER_TOOLKIT_GUIDE.md | VS Code, extensions, terminal setup | 15 min |
 | 12_AI_TOOLS_GUIDE.md | Cursor, Claude Code, Copilot, Claude API | 20 min |
+| 19_MONITORING_GUIDE.md | Sentry, uptime, alerts | 15 min |
 
 ### Visibility
 | File | Topic | Time |
 |------|-------|------|
 | SEO_MASTER_GUIDE.md | Complete SEO knowledge | 30 min |
 | SEO_CHECKLIST.md | SEO checklist | 5 min |
+| 15_SEO_DISCOVERY_GUIDE.md | IndexNow, Open Graph, JSON-LD, crawl budget | 25 min |
 
 ---
 

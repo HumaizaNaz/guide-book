@@ -1,6 +1,6 @@
-# Novaj AI — SEO Complete Checklist
+# Your App — SEO Complete Checklist
 
-Live URL: https://neura-nest-eight.vercel.app  
+Live URL: https://yoursite.com  
 Custom Domain (pending): https://novaj.ai
 
 ---
@@ -22,7 +22,7 @@ Custom Domain (pending): https://novaj.ai
 - [x] `og:type` — "website"
 - [x] `og:url` — set per page
 - [x] `og:image` — set (1200x630px required)
-- [x] `og:siteName` — "Novaj AI"
+- [x] `og:siteName` — "Your App"
 
 ### Twitter Card
 - [x] `twitter:card` — "summary_large_image"
@@ -69,7 +69,7 @@ Custom Domain (pending): https://novaj.ai
 
 ### OG Image (Social Preview Fix)
 - [ ] Current OG image is `/branding/wfASt.jpg` — verify this file exists in `public/branding/`
-- [ ] If missing, create a proper 1200x630px branded image (Novaj AI logo + tagline on dark background)
+- [ ] If missing, create a proper 1200x630px branded image (Your App logo + tagline on dark background)
 - [ ] Test preview at: https://opengraph.xyz (paste your URL to see how it looks on WhatsApp, LinkedIn, Twitter)
 
 ### Google Analytics / Tracking
@@ -124,7 +124,7 @@ Custom Domain (pending): https://novaj.ai
 - [ ] Write guest posts on Pakistani tech blogs with links back to novaj.ai
 
 ### Social Profiles (signals to Google)
-- [ ] Create LinkedIn company page for Novaj AI
+- [ ] Create LinkedIn company page for Your App
 - [ ] Create Twitter/X account @novajai (or similar)
 - [ ] Link these from the website footer (currently href="#")
 - [ ] Add `sameAs` links in Organization JSON-LD schema in `layout.tsx`
