@@ -7,7 +7,10 @@ import { GUIDE_META, type Category, type GuideMeta } from './categories'
 function findGuidesDir(): string {
   const cwd = process.cwd()
   const testFile = GUIDE_META[0]?.filename ?? '01_WEB_APP_FUNDAMENTALS.md'
-  if (fs.existsSync(path.join(cwd, testFile))) return cwd
+  // Local dev: files in parent directory (GUIDES root)
+  if (fs.existsSync(path.join(cwd, '..', testFile))) return path.join(cwd, '..')
+  // Vercel / production: files copied into website/guides/
+  if (fs.existsSync(path.join(cwd, 'guides', testFile))) return path.join(cwd, 'guides')
   return path.join(cwd, '..')
 }
 const GUIDES_DIR = findGuidesDir()
