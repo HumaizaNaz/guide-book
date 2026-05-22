@@ -1,6 +1,5 @@
 import { getAllGuides } from '@/lib/guides'
-import { CATEGORIES } from '@/lib/categories'
-import { GuideCard } from '@/components/GuideCard'
+import { GuideGrid } from '@/components/GuideGrid'
 
 export default function HomePage() {
   const allGuides = getAllGuides()
@@ -17,21 +16,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      {CATEGORIES.map(category => {
-        const guides = allGuides.filter(g => g.category === category)
-        return (
-          <section key={category} className="mb-10">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
-              {category}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {guides.map(guide => (
-                <GuideCard key={guide.slug} guide={guide} />
-              ))}
-            </div>
-          </section>
-        )
-      })}
+      <GuideGrid guides={allGuides} />
     </div>
   )
 }
