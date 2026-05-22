@@ -1,7 +1,7 @@
-# Your App — SEO Complete Checklist
+# ABC — SEO Complete Checklist
 
-Live URL: https://yoursite.com  
-Custom Domain (pending): https://yoursite.com
+Live URL: https://abc.com  
+Custom Domain (pending): https://abc.com
 
 ---
 
@@ -11,7 +11,7 @@ Custom Domain (pending): https://yoursite.com
 - [x] `sitemap.xml` — auto-generated at `/sitemap.xml` via `app/sitemap.ts`
 - [x] `robots.txt` — allows all bots, points to sitemap via `app/robots.ts`
 - [x] Canonical URLs — set on every page
-- [x] `metadataBase` — set to `https://yoursite.com` in `layout.tsx`
+- [x] `metadataBase` — set to `https://abc.com` in `layout.tsx`
 - [x] Title tags — under 60 characters on all pages
 - [x] Meta descriptions — under 160 characters on all pages
 - [x] `robots: { index: true, follow: true }` — on all pages
@@ -22,7 +22,7 @@ Custom Domain (pending): https://yoursite.com
 - [x] `og:type` — "website"
 - [x] `og:url` — set per page
 - [x] `og:image` — set (1200x630px required)
-- [x] `og:siteName` — "Your App"
+- [x] `og:siteName` — "ABC"
 
 ### Twitter Card
 - [x] `twitter:card` — "summary_large_image"
@@ -52,16 +52,16 @@ Custom Domain (pending): https://yoursite.com
 
 ### Google Search Console (MOST IMPORTANT)
 - [ ] Go to https://search.google.com/search-console
-- [ ] Add property: `yoursite.com`
+- [ ] Add property: `abc.com`
 - [ ] Verify ownership via **DNS TXT record** in your domain registrar (GoDaddy, Namecheap, etc.)
   - Google gives you a TXT record like: `google-site-verification=xxxxx`
   - Add it to your domain's DNS settings
-- [ ] After verification → Sitemaps → Submit `https://yoursite.com/sitemap.xml`
+- [ ] After verification → Sitemaps → Submit `https://abc.com/sitemap.xml`
 - [ ] Check "Coverage" tab after 48 hours to see which pages Google indexed
 
 ### Custom Domain Connection (Vercel)
 - [ ] Go to Vercel Dashboard → neura-nest project → Settings → Domains
-- [ ] Add `yoursite.com` and `www.yoursite.com`
+- [ ] Add `abc.com` and `www.abc.com`
 - [ ] Vercel gives you DNS records (A record + CNAME)
 - [ ] Add those records in your domain registrar
 - [ ] Wait 24-48 hours for DNS to propagate
@@ -69,7 +69,7 @@ Custom Domain (pending): https://yoursite.com
 
 ### OG Image (Social Preview Fix)
 - [ ] Current OG image is `/branding/wfASt.jpg` — verify this file exists in `public/branding/`
-- [ ] If missing, create a proper 1200x630px branded image (Your App logo + tagline on dark background)
+- [ ] If missing, create a proper 1200x630px branded image (ABC logo + tagline on dark background)
 - [ ] Test preview at: https://opengraph.xyz (paste your URL to see how it looks on WhatsApp, LinkedIn, Twitter)
 
 ### Google Analytics / Tracking
@@ -121,11 +121,11 @@ Custom Domain (pending): https://yoursite.com
 - [ ] Submit to Product Hunt — big boost for new SaaS products
 - [ ] Submit to BetaList, Indie Hackers, SaaS directories
 - [ ] Get listed on Crunchbase
-- [ ] Write guest posts on Pakistani tech blogs with links back to yoursite.com
+- [ ] Write guest posts on Pakistani tech blogs with links back to abc.com
 
 ### Social Profiles (signals to Google)
-- [ ] Create LinkedIn company page for Your App
-- [ ] Create Twitter/X account @yourapp (or similar)
+- [ ] Create LinkedIn company page for ABC
+- [ ] Create Twitter/X account @ABC (or similar)
 - [ ] Link these from the website footer (currently href="#")
 - [ ] Add `sameAs` links in Organization JSON-LD schema in `layout.tsx`
 
@@ -135,20 +135,20 @@ Custom Domain (pending): https://yoursite.com
 
 ```bash
 # Check if sitemap is accessible
-curl https://yoursite.com/sitemap.xml
+curl https://abc.com/sitemap.xml
 
 # Check if robots.txt is correct
-curl https://yoursite.com/robots.txt
+curl https://abc.com/robots.txt
 
 # Check Open Graph tags on any page
-npx opengraph-fetch https://yoursite.com
+npx opengraph-fetch https://abc.com
 ```
 
 ---
 
 ## PRIORITY ORDER (What to do first)
 
-1. Connect `yoursite.com` domain to Vercel
+1. Connect `abc.com` domain to Vercel
 2. Submit to Google Search Console + sitemap
 3. Fix OG image (verify/create 1200x630 image)
 4. Add Google Analytics
