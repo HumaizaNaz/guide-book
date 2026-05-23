@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useLang } from '@/lib/language-context'
-import { GuideContent } from './GuideContent'
+import { ClientMarkdown } from './ClientMarkdown'
 import { Loader2 } from 'lucide-react'
 
 interface Props {
@@ -30,20 +30,15 @@ export function GuideContentSwitcher({ slug, urduContent }: Props) {
   }, [lang, slug, enContent])
 
   if (lang === 'en') {
-    if (loading) return (
+    if (error) return <ClientMarkdown content={urduContent} />
+    if (!enContent) return (
       <div className="flex items-center gap-2 py-12 text-gray-400">
         <Loader2 size={16} className="animate-spin" />
         <span className="text-sm">Loading English content...</span>
       </div>
     )
-    if (error) return (
-      <div className="py-8 text-sm text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 rounded-lg px-4">
-        English version not available yet. Showing original.
-        <div className="mt-4"><GuideContent content={urduContent} /></div>
-      </div>
-    )
-    if (enContent) return <GuideContent content={enContent} />
+    return <ClientMarkdown content={enContent} />
   }
 
-  return <GuideContent content={urduContent} />
+  return <ClientMarkdown content={urduContent} />
 }

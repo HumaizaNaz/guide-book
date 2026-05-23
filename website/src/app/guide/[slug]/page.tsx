@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getGuideBySlug, getRelatedGuides } from '@/lib/guides'
-import { GuideContent } from '@/components/GuideContent'
 import { ProgressTracker } from '@/components/ProgressTracker'
 import { NotesPad } from '@/components/NotesPad'
 import { RelatedGuides } from '@/components/RelatedGuides'
