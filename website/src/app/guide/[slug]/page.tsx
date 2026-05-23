@@ -6,6 +6,7 @@ import { NotesPad } from '@/components/NotesPad'
 import { RelatedGuides } from '@/components/RelatedGuides'
 import { TableOfContents } from '@/components/TableOfContents'
 import { PrintButton } from '@/components/PrintButton'
+import { GuideContentSwitcher } from '@/components/GuideContentSwitcher'
 import { Clock, BookOpen } from 'lucide-react'
 
 export async function generateStaticParams() {
@@ -50,7 +51,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
 
-        <GuideContent content={guide.content} />
+        <GuideContentSwitcher slug={slug} urduContent={guide.content} />
         <NotesPad slug={slug} />
         <RelatedGuides guides={related} />
       </article>

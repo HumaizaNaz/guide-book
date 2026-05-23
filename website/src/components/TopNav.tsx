@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { Search, Bookmark } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
+import { LanguageToggle } from './LanguageToggle'
 
 interface TopNavProps {
   onSearchOpen: () => void
@@ -30,6 +31,7 @@ export function TopNav({ onSearchOpen }: TopNavProps) {
             <Bookmark size={15} className="md:hidden" />
             <span className="hidden md:inline">Bookmarks</span>
           </Link>
+          <LanguageToggle />
           <ThemeToggle />
         </div>
       </div>

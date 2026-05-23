@@ -48,6 +48,27 @@
   .prose code:not(pre code) { @apply bg-gray-100 dark:bg-gray-800 text-brand-700 dark:text-brand-400 px-1.5 py-0.5 rounded text-sm font-mono; }
 }
 
+/* Hide Google Translate toolbar completely */
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.skiptranslate,
+div.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+#goog-gt-votingFrame {
+  display: none !important;
+  pointer-events: none !important;
+}
+body {
+  top: 0 !important;
+  position: static !important;
+}
+font[style*="vertical-align: inherit"] {
+  display: inline !important;
+}
+
 @media print {
   header,
   aside,
