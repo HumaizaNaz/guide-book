@@ -27,6 +27,10 @@ export function TopNav({ onSearchOpen }: TopNavProps) {
         </button>
 
         <div className="flex items-center gap-2">
+          <Link href="/exam" className="flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 px-2 py-1 rounded hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors">
+            <span className="hidden md:inline">🎓 Exam Prep</span>
+            <span className="md:hidden">🎓</span>
+          </Link>
           <Link href="/bookmarks" className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             <Bookmark size={15} className="md:hidden" />
             <span className="hidden md:inline">Bookmarks</span>

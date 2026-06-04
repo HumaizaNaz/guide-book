@@ -1,0 +1,36 @@
+Certification Exam L1: P1-AFAP — Agent Foundations And Prompting
+Covers Sections I–III
+I. Thesis for Professionals
+Full Version
+1. English
+https://agentfactory.panaversity.org/docs/thesis
+2. Urdu
+https://agentfactory.panaversity.org/ur/docs/thesis
+3. Roman Urdu
+https://agentfactory.panaversity.org/roman/docs/thesis
+
+Plain English / Made Easy
+4. English
+https://agentfactory.panaversity.org/docs/thesis/plain-english
+5. Urdu
+https://agentfactory.panaversity.org/ur/docs/thesis/plain-english
+6. Roman Urdu
+https://agentfactory.panaversity.org/roman/docs/thesis/plain-english
+
+II. Getting Started Overview
+1. English
+https://agentfactory.panaversity.org/docs/getting-started
+2. Urdu
+https://agentfactory.panaversity.org/ur/docs/getting-started
+3. Roman Urdu
+https://agentfactory.panaversity.org/roman/docs/getting-started
+
+III. AI Prompting in 2026
+1. English
+https://agentfactory.panaversity.org/docs/ai-prompting-2026
+2. Urdu
+https://agentfactory.panaversity.org/ur/docs/ai-prompting-2026
+3. Roman Urdu
+https://agentfactory.panaversity.org/roman/docs/ai-prompting-2026
+
+

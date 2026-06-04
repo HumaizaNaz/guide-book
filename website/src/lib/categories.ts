@@ -1,4 +1,4 @@
-export type Category = 'Foundation' | 'Deploy & Infra' | 'Quality & Tools' | 'Visibility'
+export type Category = 'Foundation' | 'Deploy & Infra' | 'Quality & Tools' | 'Visibility' | 'Exam Prep'
 
 export interface GuideMeta {
   filename: string
@@ -29,9 +29,14 @@ export const GUIDE_META: GuideMeta[] = [
   { filename: '17_AUTH_GUIDE.md', slug: 'auth-guide', category: 'Foundation', order: 19 },
   { filename: '18_PAYMENTS_GUIDE.md', slug: 'payments-guide', category: 'Deploy & Infra', order: 20 },
   { filename: '19_MONITORING_GUIDE.md', slug: 'monitoring-guide', category: 'Quality & Tools', order: 21 },
+  { filename: '20_EXAM_PREP_L1_THESIS.md', slug: 'exam-prep-l1-thesis', category: 'Exam Prep', order: 22 },
+  { filename: '21_EXAM_PREP_L1_THESIS_ROMAN_URDU.md', slug: 'exam-prep-l1-thesis-roman-urdu', category: 'Exam Prep', order: 23 },
+  { filename: '22_EXAM_PREP_L1_THESIS_FULL_NEW.md', slug: 'exam-prep-l1-thesis-full', category: 'Exam Prep', order: 24 },
+  { filename: '23_EXAM_PREP_L1_GETTING_STARTED.md', slug: 'exam-prep-l1-getting-started', category: 'Exam Prep', order: 25 },
+  { filename: '24_EXAM_PREP_L1_AI_PROMPTING_2026.md', slug: 'exam-prep-l1-ai-prompting-2026', category: 'Exam Prep', order: 26 },
 ]
 
-export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility']
+export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility', 'Exam Prep']
 
 export function getMetaBySlug(slug: string): GuideMeta | undefined {
   return GUIDE_META.find(g => g.slug === slug)
