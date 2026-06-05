@@ -39,15 +39,31 @@ const sections = [
     id: 'II',
     title: 'Getting Started Overview',
     subtitle: 'Section II',
-    status: 'coming',
-    items: [],
+    status: 'complete',
+    items: [
+      {
+        label: 'Section II Notes',
+        desc: '3 Milestones, Three-Layer Mental Model, Mode 1 vs Mode 2, 19 Courses in 5 Categories — all in English',
+        href: '/guide/exam-prep-l1-getting-started',
+        tag: 'English',
+        tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+      },
+    ],
   },
   {
     id: 'III',
     title: 'AI Prompting in 2026',
     subtitle: 'Section III',
-    status: 'coming',
-    items: [],
+    status: 'complete',
+    items: [
+      {
+        label: 'Section III Notes',
+        desc: 'All 13 concepts — Novice vs Power User, Context Is Everything, Sycophancy, Brainstorm-Iterate Loop, Cost & Models, and more',
+        href: '/guide/exam-prep-l1-ai-prompting-2026',
+        tag: 'English',
+        tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+      },
+    ],
   },
 ]
 
@@ -168,12 +184,12 @@ export default function ExamPage() {
         <div className="space-y-2.5">
           {[
             { day: 'Day 1–2 (May 30–31)', task: 'Thesis — Plain English (all 7 chunks)', done: true },
-            { day: 'Day 3 (Jun 1)', task: 'Thesis — Full Version (deeper detail)', done: false },
-            { day: 'Day 4 (Jun 2)', task: 'Getting Started Overview', done: false },
-            { day: 'Day 5 (Jun 3)', task: 'AI Prompting in 2026', done: false },
-            { day: 'Day 6 (Jun 4)', task: 'Revision + Notes review', done: false },
-            { day: 'Day 7 (Jun 5)', task: 'Practice Quiz — target 80%+', done: false },
-            { day: 'Day 8 (Jun 6)', task: 'Final revision + weak areas', done: false },
+            { day: 'Day 3 (Jun 1)', task: 'Thesis — Full Version (deeper detail)', done: true },
+            { day: 'Day 4 (Jun 2)', task: 'Getting Started Overview', done: true },
+            { day: 'Day 5 (Jun 3)', task: 'AI Prompting in 2026', done: true },
+            { day: 'Day 6 (Jun 4)', task: 'Revision + Notes review', done: true },
+            { day: '★ Today (Jun 5)', task: 'Practice Quiz — Final Exam (target 80%+)', done: false },
+            { day: 'Jun 6', task: 'Final revision + weak areas', done: false },
             { day: '7 June', task: '🎯 EXAM DAY', done: false },
           ].map((item, i) => (
             <div key={i} className={`flex items-center gap-3 text-sm ${item.done ? 'opacity-100' : 'opacity-70'}`}>

@@ -161,7 +161,7 @@ The thesis defined two operating modes. The Getting Started section maps these t
 
 ---
 
-## CHUNK 4 — The 19 Courses Overview & Time Requirements
+## CHUNK 4 — The 16 Courses Overview & Time Requirements
 
 ---
 
@@ -179,7 +179,7 @@ The thesis defined two operating modes. The Getting Started section maps these t
 
 ---
 
-### The 19 Courses — Organized by Category
+### The 16 Courses — Organized by Category
 
 #### Category 1: Foundations (Everyone)
 
@@ -284,7 +284,7 @@ A: Seven Principles
 A: Seven Invariants
 
 **Q: How many total courses are there?**
-A: 19 courses, organized in 5 categories
+A: 16 courses, organized in 5 categories
 
 **Q: What is Course 1 about?**
 A: AI Prompting in 2026 — 45-minute primer, covers ChatGPT/Claude/Gemini, 13 concepts

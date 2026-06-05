@@ -7,6 +7,7 @@ const categoryColors: Record<string, string> = {
   'Deploy & Infra': 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
   'Quality & Tools': 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
   'Visibility': 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+  'Exam Prep': 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400',
 }
 
 const readTimes: Record<string, string> = {
@@ -17,6 +18,9 @@ const readTimes: Record<string, string> = {
   'developer-toolkit': '15 min', 'ai-tools-guide': '20 min', 'seo-master-guide': '30 min',
   'seo-checklist': '5 min', 'seo-discovery-guide': '25 min', 'typescript-guide': '20 min',
   'auth-guide': '20 min', 'payments-guide': '20 min', 'monitoring-guide': '15 min',
+  'exam-prep-l1-thesis': '56 min', 'exam-prep-l1-thesis-roman-urdu': '15 min',
+  'exam-prep-l1-thesis-full': '9 min', 'exam-prep-l1-getting-started': '10 min',
+  'exam-prep-l1-ai-prompting-2026': '22 min',
 }
 
 const shortTitles: Record<string, string> = {
@@ -31,6 +35,9 @@ const shortTitles: Record<string, string> = {
   'seo-discovery-guide': 'SEO Discovery & Indexing', 'typescript-guide': 'TypeScript Guide',
   'auth-guide': 'Auth Guide', 'payments-guide': 'Payments (Stripe)',
   'monitoring-guide': 'Monitoring Guide',
+  'exam-prep-l1-thesis': 'Thesis: Plain English', 'exam-prep-l1-thesis-roman-urdu': 'Thesis: Roman Urdu',
+  'exam-prep-l1-thesis-full': 'Thesis: Full Version', 'exam-prep-l1-getting-started': 'Getting Started Overview',
+  'exam-prep-l1-ai-prompting-2026': 'AI Prompting in 2026',
 }
 
 export function RelatedGuides({ guides }: { guides: GuideMeta[] }) {
