@@ -65,6 +65,28 @@ const sections = [
       },
     ],
   },
+  {
+    id: 'IV',
+    title: 'The Agent Is the Operating Layer',
+    subtitle: 'New Topic',
+    status: 'complete',
+    items: [
+      {
+        label: 'English Notes',
+        desc: '15 concepts — Two Deaths, SaaSpocalypse (3 layers), AI Operating Layer, Personal vs General Agents, OSWorld data, RTX Spark, Objections, Governance',
+        href: '/guide/exam-prep-l1-ai-operating-layer',
+        tag: 'English',
+        tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+      },
+      {
+        label: 'Roman Urdu Notes',
+        desc: 'Poori "AI Operating Layer" topic Roman Urdu mein — do mautein, SaaSpocalypse, naya architecture, do agent types, OSWorld, governance',
+        href: '/guide/exam-prep-l1-ai-operating-layer-roman-urdu',
+        tag: 'Roman Urdu',
+        tagColor: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
+      },
+    ],
+  },
 ]
 
 const sourceLinks = [
@@ -73,6 +95,7 @@ const sourceLinks = [
   { label: 'Thesis — Roman Urdu', href: 'https://agentfactory.panaversity.org/roman/docs/thesis/plain-english' },
   { label: 'Getting Started (EN)', href: 'https://agentfactory.panaversity.org/docs/getting-started' },
   { label: 'AI Prompting 2026 (EN)', href: 'https://agentfactory.panaversity.org/docs/ai-prompting-2026' },
+  { label: 'AI Operating Layer (EN)', href: 'https://agentfactory.panaversity.org/docs/ai-operating-layer' },
 ]
 
 export default function ExamPage() {
@@ -107,13 +130,24 @@ export default function ExamPage() {
           </Link>
         </div>
       </div>
-      <div className="mb-8 p-6 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <div className="mb-4 p-6 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 text-white">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
             <h2 className="text-xl font-bold mb-1">🔬 Full Version Quiz</h2>
             <p className="text-purple-100 text-sm">25 questions on new content only — engine comparison, harness vs compute, trigger orthogonality, economic actors.</p>
           </div>
           <Link href="/quiz-full" className="flex-shrink-0 bg-white text-purple-700 font-bold px-6 py-3 rounded-xl hover:bg-purple-50 transition-colors text-sm">
+            Start Quiz →
+          </Link>
+        </div>
+      </div>
+      <div className="mb-8 p-6 rounded-2xl bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <h2 className="text-xl font-bold mb-1">🖥️ AI Operating Layer Quiz</h2>
+            <p className="text-teal-100 text-sm">20 questions — Two Deaths, SaaSpocalypse, AI Operating Layer architecture, agent types, OSWorld data, RTX Spark, objections, and governance.</p>
+          </div>
+          <Link href="/quiz-operating-layer" className="flex-shrink-0 bg-white text-teal-700 font-bold px-6 py-3 rounded-xl hover:bg-teal-50 transition-colors text-sm">
             Start Quiz →
           </Link>
         </div>

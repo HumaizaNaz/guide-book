@@ -34,6 +34,8 @@ export const GUIDE_META: GuideMeta[] = [
   { filename: '22_EXAM_PREP_L1_THESIS_FULL_NEW.md', slug: 'exam-prep-l1-thesis-full', category: 'Exam Prep', order: 24 },
   { filename: '23_EXAM_PREP_L1_GETTING_STARTED.md', slug: 'exam-prep-l1-getting-started', category: 'Exam Prep', order: 25 },
   { filename: '24_EXAM_PREP_L1_AI_PROMPTING_2026.md', slug: 'exam-prep-l1-ai-prompting-2026', category: 'Exam Prep', order: 26 },
+  { filename: '25_EXAM_PREP_L1_AI_OPERATING_LAYER.md', slug: 'exam-prep-l1-ai-operating-layer', category: 'Exam Prep', order: 27 },
+  { filename: '26_EXAM_PREP_L1_AI_OPERATING_LAYER_ROMAN_URDU.md', slug: 'exam-prep-l1-ai-operating-layer-roman-urdu', category: 'Exam Prep', order: 28 },
 ]
 
 export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility', 'Exam Prep']
