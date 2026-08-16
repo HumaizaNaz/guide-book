@@ -1,5 +1,5 @@
-# Exam Prep L1 — Thesis: Full Version (New Content Only)
-*P1-AFAP Certification — What is NEW vs Plain English — Exam: 7 June 2026*
+# Thesis for Professionals — Full Version (Additional Concepts)
+*Agent Foundations And Prompting — What is NEW vs Plain English*
 
 ---
 

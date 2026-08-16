@@ -1,8 +1,8 @@
 import { QuizPlayer } from '@/components/QuizPlayer'
 
 export const metadata = {
-  title: 'L1 P1-AFAP Certification Quiz — 60 Questions',
-  description: 'Scenario-based quiz for the L1 P1-AFAP Agent Foundations and Prompting certification exam. 60 questions covering all 7 chunks of the thesis.',
+  title: 'Practice Quiz — 60 Questions',
+  description: 'Scenario-based practice quiz for Agent Foundations and Prompting. 60 questions covering all 7 chunks of the thesis.',
 }
 
 export default function QuizPage() {
@@ -10,10 +10,10 @@ export default function QuizPage() {
     <div>
       <div className="mb-8">
         <div className="inline-block bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">
-          Exam Prep — 7 June 2026
+          Practice Quiz
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          L1 P1-AFAP Certification Quiz
+          Agent Foundations and Prompting — Quiz
         </h1>
         <p className="text-gray-500 dark:text-gray-400 text-base">
           60 scenario-based questions covering the Agent Factory Thesis — Agent Foundations and Prompting.

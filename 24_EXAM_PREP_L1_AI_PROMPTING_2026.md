@@ -1,11 +1,11 @@
-# Exam Prep L1 — Section III: AI Prompting in 2026
-*P1-AFAP Certification — Agent Foundations And Prompting — Exam: 7 June 2026*
+# AI Prompting in 2026
+*Agent Foundations And Prompting — Notes*
 
 ---
 
 ## ABOUT THIS GUIDE
 
-This guide covers **Section III: AI Prompting in 2026** — Course 1 (45-minute crash course, 13 concepts) for the L1 P1-AFAP Certification Exam.
+This guide covers **AI Prompting in 2026** — a 45-minute crash course across 13 concepts.
 
 **Source:** https://agentfactory.panaversity.org/docs/ai-prompting-2026
 

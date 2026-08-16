@@ -1,11 +1,11 @@
-# Exam Prep L1 — Thesis: Plain English
-*P1-AFAP Certification — Agent Foundations And Prompting — Exam: 7 June 2026*
+# Thesis for Professionals — Plain English
+*Agent Foundations And Prompting — Notes*
 
 ---
 
 ## ABOUT THIS GUIDE
 
-This guide covers **Section I: Thesis for Professionals (Plain English version)** for the L1 P1-AFAP Certification Exam. Content is broken into 7 chunks for structured study.
+This guide covers **Section I: Thesis for Professionals (Plain English version)**. Content is broken into 7 chunks for structured study.
 
 **Source:** https://agentfactory.panaversity.org/docs/thesis/plain-english
 

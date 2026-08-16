@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Exam Prep — L1 P1-AFAP Agent Foundations And Prompting',
-  description: 'Complete exam preparation for L1 P1-AFAP certification — Agent Foundations and Prompting. Notes in English and Roman Urdu, plus 60 scenario-based quiz questions.',
+  title: 'Study Notes — Agent Foundations And Prompting',
+  description: 'Structured study notes for Agent Foundations and Prompting. Notes in English and Roman Urdu, plus 60 scenario-based practice quiz questions.',
 }
 
 const sections = [
@@ -15,21 +15,21 @@ const sections = [
       {
         label: 'English Notes',
         desc: 'Complete Plain English thesis — all 51 sections, 7 chunks, vocabulary, revision cards',
-        href: '/guide/exam-prep-l1-thesis',
+        href: '/guide/agent-thesis-plain-english',
         tag: 'English',
         tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
       },
       {
         label: 'Roman Urdu Notes',
         desc: 'Poora thesis Roman Urdu mein — sab 7 chunks, vocabulary, master revision',
-        href: '/guide/exam-prep-l1-thesis-roman-urdu',
+        href: '/guide/agent-thesis-roman-urdu',
         tag: 'Roman Urdu',
         tagColor: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
       },
       {
         label: 'Full Version — New Content',
         desc: 'Engine comparison table, selection framework, harness vs compute, trigger orthogonality — what Plain English did not cover',
-        href: '/guide/exam-prep-l1-thesis-full',
+        href: '/guide/agent-thesis-full-version',
         tag: 'Full Version',
         tagColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
       },
@@ -44,7 +44,7 @@ const sections = [
       {
         label: 'Section II Notes',
         desc: '3 Milestones, Three-Layer Mental Model, Mode 1 vs Mode 2, 19 Courses in 5 Categories — all in English',
-        href: '/guide/exam-prep-l1-getting-started',
+        href: '/guide/ai-agents-getting-started',
         tag: 'English',
         tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
       },
@@ -59,7 +59,7 @@ const sections = [
       {
         label: 'Section III Notes',
         desc: 'All 13 concepts — Novice vs Power User, Context Is Everything, Sycophancy, Brainstorm-Iterate Loop, Cost & Models, and more',
-        href: '/guide/exam-prep-l1-ai-prompting-2026',
+        href: '/guide/ai-prompting-2026',
         tag: 'English',
         tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
       },
@@ -74,14 +74,14 @@ const sections = [
       {
         label: 'English Notes',
         desc: '15 concepts — Two Deaths, SaaSpocalypse (3 layers), AI Operating Layer, Personal vs General Agents, OSWorld data, RTX Spark, Objections, Governance',
-        href: '/guide/exam-prep-l1-ai-operating-layer',
+        href: '/guide/ai-operating-layer',
         tag: 'English',
         tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
       },
       {
         label: 'Roman Urdu Notes',
         desc: 'Poori "AI Operating Layer" topic Roman Urdu mein — do mautein, SaaSpocalypse, naya architecture, do agent types, OSWorld, governance',
-        href: '/guide/exam-prep-l1-ai-operating-layer-roman-urdu',
+        href: '/guide/ai-operating-layer-roman-urdu',
         tag: 'Roman Urdu',
         tagColor: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
       },
@@ -105,13 +105,13 @@ export default function ExamPage() {
       <div className="mb-10">
         <div className="inline-flex items-center gap-2 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide">
           <span>📅</span>
-          <span>Exam Date: 7 June 2026</span>
+          <span>Target Date: 7 June 2026</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-          L1: P1-AFAP Exam Prep
+          Study Notes
         </h1>
         <p className="text-lg text-gray-500 dark:text-gray-400 mb-2">
-          Agent Foundations And Prompting — Certification Exam
+          Agent Foundations And Prompting
         </p>
         <p className="text-gray-600 dark:text-gray-400 text-sm">
           Covers Sections I–III of the Agent Factory curriculum. Notes in English and Roman Urdu, plus a 60-question scenario-based quiz.
@@ -153,7 +153,7 @@ export default function ExamPage() {
         </div>
       </div>
 
-      {/* Exam Sections */}
+      {/* Sections */}
       <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Study Notes by Section</h2>
       <div className="space-y-4 mb-10">
         {sections.map(section => (
@@ -222,9 +222,9 @@ export default function ExamPage() {
             { day: 'Day 4 (Jun 2)', task: 'Getting Started Overview', done: true },
             { day: 'Day 5 (Jun 3)', task: 'AI Prompting in 2026', done: true },
             { day: 'Day 6 (Jun 4)', task: 'Revision + Notes review', done: true },
-            { day: '★ Today (Jun 5)', task: 'Practice Quiz — Final Exam (target 80%+)', done: false },
+            { day: '★ Today (Jun 5)', task: 'Practice Quiz — Full Test (target 80%+)', done: false },
             { day: 'Jun 6', task: 'Final revision + weak areas', done: false },
-            { day: '7 June', task: '🎯 EXAM DAY', done: false },
+            { day: '7 June', task: '🎯 TARGET DAY', done: false },
           ].map((item, i) => (
             <div key={i} className={`flex items-center gap-3 text-sm ${item.done ? 'opacity-100' : 'opacity-70'}`}>
               <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${item.done ? 'bg-green-500 text-white' : 'border-2 border-gray-300 dark:border-gray-600'}`}>

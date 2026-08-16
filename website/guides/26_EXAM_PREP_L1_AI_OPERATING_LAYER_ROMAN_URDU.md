@@ -1,5 +1,5 @@
-# Exam Prep L1 — AI Operating Layer: Roman Urdu Notes
-*P1-AFAP Certification — Agent Foundations And Prompting — Exam: 7 June 2026*
+# AI Operating Layer — Roman Urdu Notes
+*Agent Foundations And Prompting — Notes*
 
 ---
 

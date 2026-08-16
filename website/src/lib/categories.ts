@@ -1,4 +1,4 @@
-export type Category = 'Foundation' | 'Deploy & Infra' | 'Quality & Tools' | 'Visibility' | 'Exam Prep'
+export type Category = 'Foundation' | 'Deploy & Infra' | 'Quality & Tools' | 'Visibility' | 'AI & Agents'
 
 export interface GuideMeta {
   filename: string
@@ -29,16 +29,16 @@ export const GUIDE_META: GuideMeta[] = [
   { filename: '17_AUTH_GUIDE.md', slug: 'auth-guide', category: 'Foundation', order: 19 },
   { filename: '18_PAYMENTS_GUIDE.md', slug: 'payments-guide', category: 'Deploy & Infra', order: 20 },
   { filename: '19_MONITORING_GUIDE.md', slug: 'monitoring-guide', category: 'Quality & Tools', order: 21 },
-  { filename: '20_EXAM_PREP_L1_THESIS.md', slug: 'exam-prep-l1-thesis', category: 'Exam Prep', order: 22 },
-  { filename: '21_EXAM_PREP_L1_THESIS_ROMAN_URDU.md', slug: 'exam-prep-l1-thesis-roman-urdu', category: 'Exam Prep', order: 23 },
-  { filename: '22_EXAM_PREP_L1_THESIS_FULL_NEW.md', slug: 'exam-prep-l1-thesis-full', category: 'Exam Prep', order: 24 },
-  { filename: '23_EXAM_PREP_L1_GETTING_STARTED.md', slug: 'exam-prep-l1-getting-started', category: 'Exam Prep', order: 25 },
-  { filename: '24_EXAM_PREP_L1_AI_PROMPTING_2026.md', slug: 'exam-prep-l1-ai-prompting-2026', category: 'Exam Prep', order: 26 },
-  { filename: '25_EXAM_PREP_L1_AI_OPERATING_LAYER.md', slug: 'exam-prep-l1-ai-operating-layer', category: 'Exam Prep', order: 27 },
-  { filename: '26_EXAM_PREP_L1_AI_OPERATING_LAYER_ROMAN_URDU.md', slug: 'exam-prep-l1-ai-operating-layer-roman-urdu', category: 'Exam Prep', order: 28 },
+  { filename: '20_EXAM_PREP_L1_THESIS.md', slug: 'agent-thesis-plain-english', category: 'AI & Agents', order: 22 },
+  { filename: '21_EXAM_PREP_L1_THESIS_ROMAN_URDU.md', slug: 'agent-thesis-roman-urdu', category: 'AI & Agents', order: 23 },
+  { filename: '22_EXAM_PREP_L1_THESIS_FULL_NEW.md', slug: 'agent-thesis-full-version', category: 'AI & Agents', order: 24 },
+  { filename: '23_EXAM_PREP_L1_GETTING_STARTED.md', slug: 'ai-agents-getting-started', category: 'AI & Agents', order: 25 },
+  { filename: '24_EXAM_PREP_L1_AI_PROMPTING_2026.md', slug: 'ai-prompting-2026', category: 'AI & Agents', order: 26 },
+  { filename: '25_EXAM_PREP_L1_AI_OPERATING_LAYER.md', slug: 'ai-operating-layer', category: 'AI & Agents', order: 27 },
+  { filename: '26_EXAM_PREP_L1_AI_OPERATING_LAYER_ROMAN_URDU.md', slug: 'ai-operating-layer-roman-urdu', category: 'AI & Agents', order: 28 },
 ]
 
-export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility', 'Exam Prep']
+export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility', 'AI & Agents']
 
 export function getMetaBySlug(slug: string): GuideMeta | undefined {
   return GUIDE_META.find(g => g.slug === slug)

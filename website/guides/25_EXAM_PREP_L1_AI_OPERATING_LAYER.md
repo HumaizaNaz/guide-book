@@ -1,5 +1,5 @@
-# Exam Prep L1 — The Agent Is the Operating Layer
-*P1-AFAP Certification — Agent Foundations And Prompting — Exam: 7 June 2026*
+# The Agent Is the Operating Layer
+*Agent Foundations And Prompting — Notes*
 
 ---
 

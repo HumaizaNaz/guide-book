@@ -1,11 +1,11 @@
-# Exam Prep L1 — Section II: Getting Started Overview
-*P1-AFAP Certification — Agent Foundations And Prompting — Exam: 7 June 2026*
+# Getting Started with AI Agents — Overview
+*Agent Foundations And Prompting — Notes*
 
 ---
 
 ## ABOUT THIS GUIDE
 
-This guide covers **Section II: Getting Started Overview** for the L1 P1-AFAP Certification Exam.
+This guide covers **Getting Started Overview** — the three milestones, the mental model, and the course structure.
 
 **Source:** https://agentfactory.panaversity.org/docs/getting-started
 

@@ -1,11 +1,11 @@
-# Exam Prep L1 — Thesis: Roman Urdu Notes
-*P1-AFAP Certification — Agent Foundations And Prompting — Exam: 7 June 2026*
+# Thesis for Professionals — Roman Urdu Notes
+*Agent Foundations And Prompting — Notes*
 
 ---
 
 ## YEH NOTES KISKE LIYE HAIN?
 
-Yeh notes **L1: P1-AFAP Certification Exam** ki tayari ke liye hain — Roman Urdu mein.
+Yeh notes **Thesis for Professionals** samajhne ke liye hain — Roman Urdu mein.
 Har cheez wahi hai jo class mein explain ki gayi — asaan zabaan mein.
 
 **Source:** https://agentfactory.panaversity.org/docs/thesis/plain-english
@@ -1395,4 +1395,3 @@ Skills      → Agent Skills (agentskills.io)
 ---
 
 *Section I: Thesis Plain English — Roman Urdu Notes — COMPLETE*
-*Exam Date: 7 June 2026*
