@@ -44,7 +44,8 @@
   .prose th { @apply bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 text-left font-semibold text-sm; }
   .prose td { @apply border border-gray-200 dark:border-gray-700 px-4 py-2 text-sm; }
   .prose blockquote { @apply border-l-4 border-brand-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4; }
-  .prose pre  { @apply rounded-xl overflow-hidden my-4; }
+  .prose pre  { @apply rounded-xl overflow-x-auto my-4 p-4 bg-gray-900 border border-gray-800 dark:bg-gray-900 dark:border-gray-700; }
+  .prose pre code { @apply bg-transparent text-gray-100 text-sm font-mono leading-6; }
   .prose code:not(pre code) { @apply bg-gray-100 dark:bg-gray-800 text-brand-700 dark:text-brand-400 px-1.5 py-0.5 rounded text-sm font-mono; }
 }
 

@@ -29,13 +29,16 @@ export const GUIDE_META: GuideMeta[] = [
   { filename: '17_AUTH_GUIDE.md', slug: 'auth-guide', category: 'Foundation', order: 19 },
   { filename: '18_PAYMENTS_GUIDE.md', slug: 'payments-guide', category: 'Deploy & Infra', order: 20 },
   { filename: '19_MONITORING_GUIDE.md', slug: 'monitoring-guide', category: 'Quality & Tools', order: 21 },
-  { filename: '20_EXAM_PREP_L1_THESIS.md', slug: 'agent-thesis-plain-english', category: 'AI & Agents', order: 22 },
-  { filename: '21_EXAM_PREP_L1_THESIS_ROMAN_URDU.md', slug: 'agent-thesis-roman-urdu', category: 'AI & Agents', order: 23 },
-  { filename: '22_EXAM_PREP_L1_THESIS_FULL_NEW.md', slug: 'agent-thesis-full-version', category: 'AI & Agents', order: 24 },
-  { filename: '23_EXAM_PREP_L1_GETTING_STARTED.md', slug: 'ai-agents-getting-started', category: 'AI & Agents', order: 25 },
-  { filename: '24_EXAM_PREP_L1_AI_PROMPTING_2026.md', slug: 'ai-prompting-2026', category: 'AI & Agents', order: 26 },
-  { filename: '25_EXAM_PREP_L1_AI_OPERATING_LAYER.md', slug: 'ai-operating-layer', category: 'AI & Agents', order: 27 },
-  { filename: '26_EXAM_PREP_L1_AI_OPERATING_LAYER_ROMAN_URDU.md', slug: 'ai-operating-layer-roman-urdu', category: 'AI & Agents', order: 28 },
+  { filename: '20_GETTING_PAID_AI_ERA.md', slug: 'getting-paid-ai-era', category: 'AI & Agents', order: 22 },
+  { filename: '21_SELLING_AI_AGENTS_TO_CLIENTS.md', slug: 'selling-ai-agents', category: 'AI & Agents', order: 23 },
+  { filename: '22_BUILDING_YOUR_FIRST_AI_AGENT.md', slug: 'building-first-ai-agent', category: 'AI & Agents', order: 24 },
+  { filename: '23_AGENTIC_CODING_CLAUDE_CODE.md', slug: 'agentic-coding-claude-code', category: 'AI & Agents', order: 25 },
+  { filename: '24_EVAL_DRIVEN_DEVELOPMENT.md', slug: 'eval-driven-development', category: 'AI & Agents', order: 26 },
+  { filename: '25_DEVELOPER_PORTFOLIO_BRANDING.md', slug: 'developer-portfolio-branding', category: 'AI & Agents', order: 27 },
+  { filename: '26_TECHNICAL_INTERVIEW_PREP.md', slug: 'technical-interview-prep', category: 'AI & Agents', order: 28 },
+  { filename: '27_MCP_MODEL_CONTEXT_PROTOCOL.md', slug: 'mcp-model-context-protocol', category: 'AI & Agents', order: 29 },
+  { filename: '28_MICRO_SAAS_SOLO_DEVELOPER.md', slug: 'micro-saas-solo-developer', category: 'AI & Agents', order: 30 },
+  { filename: '29_SPEC_DRIVEN_VS_VIBE_CODING.md', slug: 'spec-driven-vs-vibe-coding', category: 'AI & Agents', order: 31 },
 ]
 
 export const CATEGORIES: Category[] = ['Foundation', 'Deploy & Infra', 'Quality & Tools', 'Visibility', 'AI & Agents']

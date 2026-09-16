@@ -23,3 +23,6 @@ Thumbs.db
 *.png
 
 .vercel
+
+# Firecrawl scratch cache
+.firecrawl/

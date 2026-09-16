@@ -628,6 +628,161 @@ npx prisma migrate deploy
 
 ---
 
+## PART 9 — SCALING (App Grow Hone Pe Kya Karo)
+
+Scaling = system ki capacity badhana ya ghatana, traffic/users/data ke hisab se.
+
+```
+Vertical Scaling (Scale Up)     — Same server ko powerful banao
+                                  (zyada CPU, RAM, storage add karo)
+                                  Use: jab ek strong machine kaafi ho,
+                                  simplicity matter kare
+
+Horizontal Scaling (Scale Out)  — Zyada servers add karo, load unke
+                                  beech distribute karo
+                                  Use: bade traffic, high availability,
+                                  distributed systems ke liye
+
+Scale Down                      — Demand kam hone pe server ki capacity
+                                  reduce karo (same server, kam resources)
+
+Scale In                        — Demand kam hone pe extra servers/
+                                  instances remove karo
+
+Auto Scaling                    — Demand ke hisab se resources khud-b-khud
+                                  add/remove hote hain (config rules se)
+                                  Use: sales/events jaisa unpredictable
+                                  traffic
+```
+
+**Strong Consistency:** Jab ek write commit ho jaye, uske baad har read us updated/correct value ko return kare — yeh guarantee **banking, payments, aur financial transactions** ke liye critical hoti hai. Distributed/horizontally-scaled systems mein yeh guarantee maintain karna trade-offs maangta hai (CAP theorem) — isliye payment-critical paths ko strong consistency wale stores pe hi rakho.
+
+---
+
+## PART 10 — LOAD BALANCING (Multiple Servers Ko Manage Karna)
+
+Jab horizontal scaling karte ho (multiple servers), ek **Load Balancer** chahiye hota hai jo incoming requests ko un servers ke beech distribute kare — overload rokta hai, availability improve karta hai, aur horizontal scaling ko practical banata hai.
+
+<figure class="my-8">
+<svg viewBox="0 0 640 260" class="w-full h-auto max-w-2xl mx-auto block text-gray-700 dark:text-gray-300" role="img" aria-label="Load balancer diagram: incoming client requests hit a load balancer, which distributes traffic across three backend servers, with a health check watching each server">
+<defs>
+<marker id="arrow-lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+</marker>
+</defs>
+<rect x="20" y="100" width="140" height="50" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
+<text x="90" y="130" text-anchor="middle" font-size="14" fill="currentColor">Client requests</text>
+<line x1="160" y1="125" x2="255" y2="125" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-lb)" />
+<rect x="260" y="95" width="150" height="60" rx="8" fill="#0284c7" stroke="#0284c7" stroke-width="2" />
+<text x="335" y="130" text-anchor="middle" font-size="14" fill="#ffffff">Load Balancer</text>
+<line x1="410" y1="115" x2="490" y2="40" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-lb)" />
+<line x1="410" y1="125" x2="490" y2="125" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-lb)" />
+<line x1="410" y1="135" x2="490" y2="210" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-lb)" />
+<rect x="495" y="15" width="130" height="50" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
+<text x="560" y="45" text-anchor="middle" font-size="13" fill="currentColor">Server 1</text>
+<rect x="495" y="100" width="130" height="50" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
+<text x="560" y="130" text-anchor="middle" font-size="13" fill="currentColor">Server 2</text>
+<rect x="495" y="185" width="130" height="50" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
+<text x="560" y="215" text-anchor="middle" font-size="13" fill="currentColor">Server 3</text>
+<text x="450" y="75" text-anchor="middle" font-size="12" fill="currentColor">distributes by strategy</text>
+</svg>
+<figcaption class="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">Load balancer sits between clients and backend servers, routing each request using a chosen strategy while health checks watch every server.</figcaption>
+</figure>
+
+### 7 Load-Balancing Strategies
+
+```
+Strategy                   │ Kaam Kaisे Karti Hai              │ Kab Use Karo
+─────────────────────────────┼────────────────────────────────────┼──────────────────
+Round Robin                │ Requests turn-by-turn har server ko│ Servers ki capacity
+                            │ rotation mein bhejta hai            │ roughly same ho
+Weighted Round Robin        │ Zyada weight = zyada requests       │ Capacity alag ho,
+                            │                                     │ high-weight server
+                            │                                     │ zyada traffic le
+Least Connections           │ Sabse kam active connections wale   │ Requests ka duration
+                            │ server ko bhejta hai                │ alag-alag ho
+Weighted Least Connections  │ Connection count + server weight    │ Capacity aur connection
+                            │ dono combine karta hai              │ load dono matter karein
+Least Response Time         │ Jo server fastest respond kare,     │ Low latency/performance
+                            │ usko prefer karta hai                │ important ho
+IP Hash                     │ Client ke IP se ek hash banake      │ Session persistence/
+                            │ hamesha same server choose karta hai│ sticky sessions chahiye
+Geographic Load Balancing   │ User ki location ke hisab se        │ Global apps — latency
+                            │ nearest region/server choose karta  │ kam, regional
+                            │ hai                                  │ availability zyada
+```
+
+### Health Check, Redundancy, Self-Healing
+
+```
+Health Check   — Load balancer periodically har server ko check karta
+                 hai. Agar koi instance fail ho, usko traffic se hata
+                 diya jata hai jab tak woh healthy na ho jaye.
+
+Redundancy     — Extra/backup components rakhna (multiple servers,
+                 redundant load balancers, replicated data) — taake
+                 ek component fail ho to system chalta rahe.
+
+Self-Healing   — System khud failures detect karta hai aur khud restart/
+                 replace/recreate karta hai — bina manual intervention ke.
+```
+
+---
+
+## PART 11 — API DESIGN (REST vs GraphQL)
+
+API = interface jo software components ko communicate karne deta hai — frontend backend se data/actions request karta hai isi ke through.
+
+**API Design** ka matlab hai: endpoints/resources plan karna, HTTP methods choose karna, request/response format, authentication/authorization, validation, errors, aur consistency.
+
+### REST API
+
+REST = resource-oriented URLs + standard HTTP methods use karne wala architectural style.
+
+```
+Method    │ Purpose
+──────────┼──────────
+GET       │ Read
+POST      │ Create
+PUT/PATCH │ Update
+DELETE    │ Delete
+```
+
+```
+Examples:
+GET    /products
+GET    /products/101
+POST   /products
+PUT    /products/101
+DELETE /products/101
+```
+
+### GraphQL
+
+GraphQL = ek query language + runtime jahan **client decide karta hai usko kaunse fields/data chahiye** — sirf ek query se related data ek saath mil jata hai.
+
+**Kab use karo:** jab alag-alag screens/clients ko data ke alag-alag combinations chahiye hon (e.g., mobile app ko kam fields, dashboard ko zyada fields) — REST mein iske liye alag endpoints banane padte, GraphQL mein ek hi endpoint se client apni zaroorat ke fields maang leta hai.
+
+---
+
+## Complete System Flow (Revision)
+
+```
+1. Database          → SQL / NoSQL choose karo
+2. App grows         → Scaling zaroorat banti hai
+3. Scaling           → Vertical ya Horizontal
+4. Horizontal        → Multiple servers
+5. Multiple servers  → Load Balancer chahiye
+6. Load Balancer     → Strategy choose karo (Round Robin, etc.)
+7. Health Check      → Unhealthy instances detect karo
+8. Redundancy        → Backup capacity rakho
+9. Self-Healing      → Failed instances auto-recover karo
+10. API              → Frontend ↔ Backend communication
+11. REST / GraphQL   → API approach choose karo
+```
+
+---
+
 ## DATABASE CHECKLIST
 
 ```
@@ -653,6 +808,14 @@ Production:
 ✓ Regular backups
 ✓ prisma migrate deploy use karo
 ✓ Monitoring (slow queries track karo)
+
+Scaling & API:
+✓ Vertical vs Horizontal scaling — sahi choice kar li hai
+✓ Horizontal scale kiya? → Load balancer + strategy decide karo
+✓ Health checks configure kiye (unhealthy instances auto-remove hon)
+✓ Redundancy hai (single point of failure nahi)
+✓ API design consistent hai (REST ya GraphQL — mix mat karo bina wajah)
+✓ Payment-critical paths strong consistency wale store pe hain
 ```
 
 ---

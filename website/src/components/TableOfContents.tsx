@@ -12,24 +12,41 @@ export function TableOfContents() {
   const [active, setActive] = useState('')
 
   useEffect(() => {
-    const headings = Array.from(document.querySelectorAll('article h2, article h3'))
-    const items: TocItem[] = headings.map(h => ({
-      id: h.id,
-      text: h.textContent ?? '',
-      level: parseInt(h.tagName[1]),
-    }))
-    setToc(items)
+    let intersectionObserver: IntersectionObserver | null = null
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) setActive(e.target.id)
-        })
-      },
-      { rootMargin: '-80px 0px -60% 0px' }
-    )
-    headings.forEach(h => observer.observe(h))
-    return () => observer.disconnect()
+    function scanHeadings() {
+      const headings = Array.from(document.querySelectorAll('article h2, article h3'))
+      const items: TocItem[] = headings.map(h => ({
+        id: h.id,
+        text: h.textContent ?? '',
+        level: parseInt(h.tagName[1]),
+      }))
+      setToc(items)
+
+      intersectionObserver?.disconnect()
+      intersectionObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) setActive(e.target.id)
+          })
+        },
+        { rootMargin: '-80px 0px -60% 0px' }
+      )
+      headings.forEach(h => intersectionObserver!.observe(h))
+    }
+
+    scanHeadings()
+
+    const article = document.querySelector('article')
+    const mutationObserver = new MutationObserver(scanHeadings)
+    if (article) {
+      mutationObserver.observe(article, { childList: true, subtree: true })
+    }
+
+    return () => {
+      intersectionObserver?.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 
   if (toc.length === 0) return null

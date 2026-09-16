@@ -2,6 +2,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
+import rehypeRaw from 'rehype-raw'
 import { CodeBlock } from './CodeBlock'
 
 export function ClientMarkdown({ content }: { content: string }) {
@@ -9,7 +10,7 @@ export function ClientMarkdown({ content }: { content: string }) {
     <div className="prose max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug]}
+        rehypePlugins={[rehypeRaw, rehypeSlug]}
         components={{
           pre: (props) => <CodeBlock {...(props as React.ComponentProps<'pre'>)} />,
         }}
